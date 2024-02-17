@@ -17,3 +17,15 @@ model User {
   password String
   email String
 }
+
+model Curso {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  dataAbertura DateTime
+  vagas       Int
+  modalidade  String
+  nomeCurso   String
+  endereco    String
+  descricao   String
+  status      String
+}
