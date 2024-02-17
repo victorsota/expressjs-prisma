@@ -31,17 +31,18 @@ export const signup = async (req: Request, res: Response) => {
   res.json({ user, token });
 };
 
-export const login = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+export const login = (req: Request, res: Response) => {
+  res.send("parabens");
+  // const { email, password } = req.body;
 
-  let user = await prisma.user.findFirst({ where: { email } });
-  if (!user) {
-    throw Error("Dados invalidos");
-  }
+  // let user = await prisma.user.findFirst({ where: { email } });
+  // if (!user) {
+  //   throw Error("Dados invalidos");
+  // }
 
-  if (!compareSync(password, user.password)) {
-    throw Error("Dados invalidos");
-  }
+  // if (!compareSync(password, user.password)) {
+  //   throw Error("Dados invalidos");
+  // }
 
-  res.json(user);
+  // res.json(user);
 };
